@@ -3,6 +3,8 @@ import cors from 'cors';
 import mongoose from "mongoose";
 import dotenv from 'dotenv'
 import authRoutes from './routes/auth.js'
+import userRoutes from './routes/users.js'
+import friendRoutes from './routes/friends.js'
 
 dotenv.config();
 const app = express();
@@ -12,6 +14,8 @@ app.use(express.json());
 
 //routes
 app.use('/api/auth', authRoutes);
+app.use('/api/users', userRoutes);
+app.use('/api/friends', friendRoutes);
 
 //Mongodb connnection
 mongoose.connect(process.env.MONGODB_URI)
