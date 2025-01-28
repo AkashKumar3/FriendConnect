@@ -8,7 +8,7 @@ export default function RecommendationsList() {
   const { data: recommendations, isLoading } = useQuery({
     queryKey: ['recommendations'],
     queryFn: async () => {
-      const response = await axios.get('http://localhost:5000/api/users/recommendations');
+      const response = await axios.get('https://friendconnect-backend.onrender.com/api/users/recommendations');
       return response.data;
     },
   });
